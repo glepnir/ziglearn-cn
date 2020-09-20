@@ -20,19 +20,19 @@ pub fn main() void {
     var optional_value: ?[]const u8 = null;
     assert(optional_value == null);
 
-    warn("\noptional 1\ntype: {}\nvalue: {}\n", @typeName(@typeOf(optional_value)), optional_value);
+    warn("\noptional 1\ntype: {}\nvalue: {}\n", @typeName(@TypeOf(optional_value)), optional_value);
 
     optional_value = "hi";
     assert(optional_value != null);
 
-    warn("\noptional 2\ntype: {}\nvalue: {}\n", @typeName(@typeOf(optional_value)), optional_value);
+    warn("\noptional 2\ntype: {}\nvalue: {}\n", @typeName(@TypeOf(optional_value)), optional_value);
 
     // error union
     var number_or_error: anyerror!i32 = error.ArgNotFound;
 
-    warn("\nerror union 1\ntype: {}\nvalue: {}\n", @typeName(@typeOf(number_or_error)), number_or_error);
+    warn("\nerror union 1\ntype: {}\nvalue: {}\n", @typeName(@TypeOf(number_or_error)), number_or_error);
 
     number_or_error = 1234;
 
-    warn("\nerror union 2\ntype: {}\nvalue: {}\n", @typeName(@typeOf(number_or_error)), number_or_error);
+    warn("\nerror union 2\ntype: {}\nvalue: {}\n", @typeName(@TypeOf(number_or_error)), number_or_error);
 }
